@@ -25,9 +25,12 @@ const extend = ([min, count], value) => [
   Math.max(count, toCount(min, value)),
 ]
 
-const grow = ([min, count], value) => [min, Max.max(count, toCount(min, value))]
+const extendMax = ([min, count], value) => [
+  min,
+  Max.max(count, toCount(min, value)),
+]
 
-const shrink = (range, value) => {
+const extendMin = (range, value) => {
   const [min, count] = range
   if (value >= min) {
     return range
@@ -54,6 +57,6 @@ export default {
   isLess,
   isOneMore,
   isOneLess,
-  grow,
-  shrink,
+  extendMax,
+  extendMin,
 }
