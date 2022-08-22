@@ -16,6 +16,9 @@ class RlSet {
     rl.add(this.versions[agentId], seq)
   }
 
+  addRange(agentId, range) {}
+  removeRange(agentId, range) {}
+
   getMaxSeq(agentId) {
     return this.versions?.[agentId].maxSeq || -1
   }
